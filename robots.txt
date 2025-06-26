@@ -1,0 +1,39 @@
+# Разрешить всем поисковым системам доступ ко всему сайту
+User-agent: *
+Allow: /
+
+# Запретить доступ для Ahrefs
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SiteExplorer
+Disallow: /
+
+# Запретить доступ для Semrush
+User-agent: SemrushBot
+Disallow: /
+
+# Запретить доступ для Majestic SEO
+User-agent: Majestic-12
+Disallow: /
+
+# Запретить доступ для Moz
+User-agent: dotbot
+Disallow: /
+User-agent: Rogerbot
+Disallow: /
+
+# Запретить доступ для Scrapinghub/Crawlera (общий бот для сбора данных)
+User-agent: Crawlera
+Disallow: /
+
+# Запретить доступ для Screaming Frog SEO Spider
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+# Запретить доступ для Zoominfo
+User-agent: ZoominfoBot
+Disallow: /
+
+# Запретить доступ для Surfer SEO
+User-agent: SurferBot
+Disallow: /
