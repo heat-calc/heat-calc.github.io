@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор радиаторов отопления: Расчет мощности и секций</title>
+    <meta name="description"
+      content="Точный калькулятор для расчета необходимой мощности и количества секций радиаторов отопления по площади помещения и высоте потолков. Подбор моделей Tubog, Sira, Royal Thermo.">
+    <meta name="keywords"
+      content="калькулятор радиаторов, расчет радиаторов отопления, калькулятор мощности радиаторов, сколько секций радиатора нужно, подбор радиаторов отопления">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+
+    <div id="root">
+      <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+          <h1
+            class="text-3xl md:text-4xl font-bold text-center text-gray-900">Калькулятор
+            радиаторов отопления</h1>
+        </div>
+      </header>
+
+      <main class="container mx-auto px-4 py-8">
+        <section class="mb-12">
+          <p class="text-lg text-center max-w-3xl mx-auto text-gray-600">
+            Правильный подбор радиаторов отопления — ключ к комфорту и экономии
+            в вашем доме. Недостаточная мощность не позволит прогреть помещение
+            в сильные морозы, а избыточная приведёт к пересушенному воздуху и
+            лишним тратам на отопление. Наш калькулятор поможет вам точно
+            рассчитать необходимое количество секций для вашей комнаты.
+          </p>
+        </section>
+
+        <div id="calculator-form"
+          class="sticky top-0 bg-white/80 backdrop-blur-lg shadow-lg rounded-xl z-10 p-4 md:p-6 mb-12 border border-gray-200">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+            <div>
+              <label for="area"
+                class="block text-sm font-medium text-gray-700 mb-1">Площадь
+                помещения, м²</label>
+              <input type="number" id="area" value="10"
+                class="w-full  px-4 py-3 bg-gray-700 text-white border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-gray-600 focus:border-blue-500 transition-all duration-200 outline-none">
+            </div>
+            <div>
+              <label for="height"
+                class="block text-sm font-medium text-gray-700 mb-1">Высота
+                потолков, м</label>
+              <input type="number" id="height" step="0.1" value="2.5"
+                class="w-full  px-4 py-3 bg-gray-700 text-white border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-gray-600 focus:border-blue-500 transition-all duration-200 outline-none">
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg text-center">
+              <span class="block text-sm font-medium text-blue-800">Объем
+                помещения</span>
+              <span id="volume"
+                class="text-2xl font-bold text-blue-900">25</span>
+              <span class="text-blue-900">м³</span>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg text-center">
+              <span class="block text-sm font-medium text-green-800">Требуемая
+                мощность</span>
+              <span id="power"
+                class="text-2xl font-bold text-green-900">1000</span>
+              <span class="text-green-900">Вт</span>
+            </div>
+          </div>
+        </div>
+
+        <section id="results">
+          <div class="mb-12">
+            <h2
+              class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-4">Радиаторы
+              Tubog</h2>
+            <a class="mb-8 text-gray-600 max-w-3xl">
+              Трубчатые радиаторы Tubog (<a
+                class="text-red-600 hover:underline"
+                href="https://tubog-radiators.ru/">tubog-radiators.ru</a>) — это
+              классика дизайна и эффективности.
+              Благодаря своей конструкции они обеспечивают отличную теплоотдачу
+              и легко вписываются в любой интерьер, от лофта до неоклассицизма.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">Tubog 2057</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 62 Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="62">17</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">Tubog 3057</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 103
+                  Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="103">10</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">Tubog 2180</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 198
+                  Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="198">6</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-12">
+            <h2
+              class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-4">Радиаторы
+              Sira (биметалл)</h2>
+            <p class="mb-8 text-gray-600 max-w-3xl">
+              Биметаллические радиаторы Sira (<a
+                class="text-red-600 hover:underline"
+                href="https://sira-rus.ru/">sira-rus.ru</a>) сочетают в себе
+              прочность стали
+              (внутренний коллектор) и высокую теплопроводность алюминия
+              (внешнее оребрение). Это делает их идеальным выбором для систем
+              центрального отопления с высоким давлением и переменным качеством
+              теплоносителя.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">SIRA RS 300</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 145
+                  Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="145">7</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">SIRA RS 500</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 201
+                  Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="201">5</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2
+              class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-4">Радиаторы
+              Royal Thermo</h2>
+            <p class="mb-8 text-gray-600 max-w-3xl">
+              Royal Thermo (<a
+                class="text-red-600 hover:underline"
+                href="https://www.royal-thermo.ru/">royal-thermo.ru</a>) — это
+              современные и высокотехнологичные радиаторы,
+              разработанные с учетом российских условий эксплуатации. Модели
+              отличаются инновационным дизайном и повышенной теплоотдачей.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">Royal Thermo Indigo
+                  500</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 180
+                  Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="180">6</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+              <div
+                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <h3 class="font-bold text-lg text-gray-900">Royal Thermo
+                  Revolution 500</h3>
+                <p class="text-sm text-gray-500 mb-4">Мощность: 170
+                  Вт/секция</p>
+                <div class="text-center bg-gray-50 p-4 rounded-lg">
+                  <span class="text-4xl font-extrabold text-blue-600"
+                    data-radiator-power="170">6</span>
+                  <span class="block text-gray-700">секций</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </main>
+
+      <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-400">
+          <p>Калькулятор радиаторов отопления. Все расчеты являются
+            приблизительными.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const areaInput = document.getElementById('area');
+            const heightInput = document.getElementById('height');
+            
+            const volumeOutput = document.getElementById('volume');
+            const powerOutput = document.getElementById('power');
+            
+            const radiatorSections = document.querySelectorAll('[data-radiator-power]');
+
+            function calculate() {
+                const area = parseFloat(areaInput.value) || 0;
+                const height = parseFloat(heightInput.value) || 0;
+
+                if (area > 0 && height > 0) {
+                    const volume = area * height;
+                    const requiredPower = volume * 40;
+
+                    volumeOutput.textContent = Math.round(volume);
+                    powerOutput.textContent = Math.round(requiredPower);
+                    
+                    radiatorSections.forEach(span => {
+                        const sectionPower = parseInt(span.dataset.radiatorPower, 10);
+                        if (sectionPower > 0) {
+                            const sections = Math.ceil(requiredPower / sectionPower);
+                            span.textContent = sections;
+                        }
+                    });
+                } else {
+                    volumeOutput.textContent = '0';
+                    powerOutput.textContent = '0';
+                    radiatorSections.forEach(span => {
+                        span.textContent = '0';
+                    });
+                }
+            }
+
+            areaInput.addEventListener('input', calculate);
+            heightInput.addEventListener('input', calculate);
+            
+            // Initial calculation is already rendered in HTML for no-JS users.
+            // The script only handles changes.
+        });
+    </script>
+
+  </body>
+</html>
