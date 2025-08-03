@@ -1,3 +1,5 @@
+Sitemap: /sitemap.xml
+
 # Разрешить всем поисковым системам доступ ко всему сайту
 User-agent: *
 Allow: /
