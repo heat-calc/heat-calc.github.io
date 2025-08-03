@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор радиаторов отопления: О проекте</title>
+    <meta name="description"
+      content="Точный калькулятор для расчета необходимой мощности и количества секций радиаторов отопления по площади помещения и высоте потолков. Подбор моделей Tubog, Sira, Royal Thermo.">
+    <meta name="keywords"
+      content="калькулятор радиаторов, расчет радиаторов отопления, калькулятор мощности радиаторов, сколько секций радиатора нужно, подбор радиаторов отопления">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+
+    <div id="root">
+      <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+          <h1
+            class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            О проекте
+          </h1>
+          <!-- Навигация -->
+          <nav
+            class="flex justify-center space-x-6 text-gray-700 text-sm md:text-base">
+            <a href="./index.html"
+              class="hover:text-blue-600 transition">Главная</a>
+            <a href="./about.html"
+              class="hover:text-blue-600 transition">О
+              проекте</a>
+            <a href="./how-to-choose.html"
+              class="hover:text-blue-600 transition">Как выбрать радиатор</a>
+            <a href="./manufacturers.html"
+              class="hover:text-blue-600 transition">Производители</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container mx-auto px-4 py-8">
+        <section class="mb-12">
+          <p class="text-lg text-center max-w-3xl mx-auto text-gray-600">
+            Проект <strong>Heat‑Calc</strong> создан, чтобы помочь людям быстро
+            и просто рассчитать необходимую мощность радиаторов отопления для
+            своего дома или квартиры.</p>
+
+          <p
+            class="mt-4 text-lg text-center max-w-3xl mx-auto text-gray-600">Правильный
+            подбор отопительных
+            приборов — это не только комфорт в зимний период, но и экономия на
+            расходах за отопление. Слишком слабые радиаторы не смогут прогреть
+            помещение, а чрезмерно мощные приведут к лишним затратам и
+            пересушенному воздуху
+          </p>
+          <p class="mt-4 text-lg text-center max-w-3xl mx-auto text-gray-600">
+            На нашем сайте вы найдете удобный калькулятор мощности радиаторов,
+            советы по выбору подходящих моделей и информацию о популярных
+            производителях отопительного оборудования.
+          </p>
+          <p class="mt-4 text-lg text-center max-w-3xl mx-auto text-gray-600">
+            Наша цель — сделать процесс выбора радиаторов понятным и быстрым для
+            всех пользователей, независимо от уровня технических знаний.
+          </p>
+        </section>
+
+      </main>
+
+      <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-400">
+          <p>Калькулятор радиаторов отопления. Все расчеты являются
+            приблизительными.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const areaInput = document.getElementById('area');
+            const heightInput = document.getElementById('height');
+            
+            const volumeOutput = document.getElementById('volume');
+            const powerOutput = document.getElementById('power');
+            
+            const radiatorSections = document.querySelectorAll('[data-radiator-power]');
+
+            function calculate() {
+                const area = parseFloat(areaInput.value) || 0;
+                const height = parseFloat(heightInput.value) || 0;
+
+                if (area > 0 && height > 0) {
+                    const volume = area * height;
+                    const requiredPower = volume * 40;
+
+                    volumeOutput.textContent = Math.round(volume);
+                    powerOutput.textContent = Math.round(requiredPower);
+                    
+                    radiatorSections.forEach(span => {
+                        const sectionPower = parseInt(span.dataset.radiatorPower, 10);
+                        if (sectionPower > 0) {
+                            const sections = Math.ceil(requiredPower / sectionPower);
+                            span.textContent = sections;
+                        }
+                    });
+                } else {
+                    volumeOutput.textContent = '0';
+                    powerOutput.textContent = '0';
+                    radiatorSections.forEach(span => {
+                        span.textContent = '0';
+                    });
+                }
+            }
+
+            areaInput.addEventListener('input', calculate);
+            heightInput.addEventListener('input', calculate);
+            
+            // Initial calculation is already rendered in HTML for no-JS users.
+            // The script only handles changes.
+        });
+    </script>
+
+  </body>
+</html>
