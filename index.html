@@ -1,23 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор радиаторов отопления: Расчет мощности и секций</title>
+    <title>Точный калькулятор радиаторов отопления: Расчет по параметрам</title>
     <meta name="description"
-      content="Точный калькулятор для расчета необходимой мощности и количества секций радиаторов отопления по площади помещения и высоте потолков. Подбор моделей Tubog, Sira, Royal Thermo.">
+      content="Рассчитайте необходимую мощность и количество секций радиаторов отопления с учетом типа окон, стен и других параметров. Онлайн-калькулятор для точного подбора.">
     <meta name="keywords"
-      content="калькулятор радиаторов, расчет радиаторов отопления, калькулятор мощности радиаторов, сколько секций радиатора нужно, подбор радиаторов отопления">
+      content="калькулятор радиаторов, расчет радиаторов отопления, калькулятор мощности радиаторов, сколько секций радиатора нужно, подбор радиаторов отопления, точный расчет тепла">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Как рассчитать количество секций радиатора отопления",
+      "description": "Используйте наш калькулятор для точного определения необходимой тепловой мощности и количества секций радиаторов для вашего помещения.",
+      "step": [{
+        "@type": "HowToStep",
+        "name": "Введите параметры помещения",
+        "text": "Укажите площадь комнаты и высоту потолков."
+      }, {
+        "@type": "HowToStep",
+        "name": "Укажите уточняющие коэффициенты",
+        "text": "Выберите тип остекления, количество наружных стен и расположение комнаты (угловая или внутренняя)."
+      }, {
+        "@type": "HowToStep",
+        "name": "Получите расчет мощности",
+        "text": "Калькулятор автоматически рассчитает требуемую тепловую мощность в Ваттах."
+      }, {
+        "@type": "HowToStep",
+        "name": "Выберите модель радиатора",
+        "text": "На основе требуемой мощности калькулятор покажет необходимое количество секций для популярных моделей радиаторов."
+      }]
+    }
+  </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Какой радиатор лучше: алюминиевый, биметаллический или стальной?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Выбор зависит от системы отопления. Биметаллические (как Sira) идеальны для центрального отопления с высоким давлением. Алюминиевые обладают высокой теплоотдачей и подходят для автономных систем. Стальные трубчатые (как Tubog) — это баланс дизайна и эффективности."
         }
-    </style>
+      }, {
+        "@type": "Question",
+        "name": "Почему так важен тип окон и количество наружных стен?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Основные теплопотери происходят через окна и наружные стены. Современные двухкамерные стеклопакеты теряют значительно меньше тепла, чем старые деревянные рамы. Угловая комната с двумя наружными стенами будет холоднее, чем внутренняя с одной, и потребует больше тепла для обогрева."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Можно ли установить радиатор с запасом мощности?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Небольшой запас (10-15%) допустим и даже полезен для работы в сильные морозы. Однако слишком большая избыточная мощность приведет к пересушиванию воздуха и некомфортной температуре. Лучше установить терморегулятор для точной настройки."
+        }
+      }]
+    }
+  </script>
   </head>
+
   <body class="bg-gray-50 text-gray-800">
 
     <div id="root">
@@ -25,20 +81,12 @@
         <div class="container mx-auto px-4 py-6">
           <h1
             class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-            Калькулятор радиаторов отопления
+            Продвинутый калькулятор радиаторов отопления
           </h1>
-          <!-- Навигация -->
           <nav
             class="flex justify-center space-x-6 text-gray-700 text-sm md:text-base">
             <a href="./index.html"
-              class="hover:text-blue-600 transition">Главная</a>
-            <a href="./about.html"
-              class="hover:text-blue-600 transition">О
-              проекте</a>
-            <a href="./how-to-choose.html"
-              class="hover:text-blue-600 transition">Как выбрать радиатор</a>
-            <a href="./manufacturers.html"
-              class="hover:text-blue-600 transition">Производители</a>
+              class="hover:text-blue-600 transition">Калькулятор</a>
           </nav>
         </div>
       </header>
@@ -46,45 +94,77 @@
       <main class="container mx-auto px-4 py-8">
         <section class="mb-12">
           <p class="text-lg text-center max-w-3xl mx-auto text-gray-600">
-            Правильный подбор радиаторов отопления — ключ к комфорту и экономии
-            в вашем доме. Недостаточная мощность не позволит прогреть помещение
-            в сильные морозы, а избыточная приведёт к пересушенному воздуху и
-            лишним тратам на отопление. Наш калькулятор поможет вам точно
-            рассчитать необходимое количество секций для вашей комнаты.
+            Правильный подбор радиаторов — ключ к комфорту и экономии. Наш
+            калькулятор поможет вам <strong class="text-gray-800">точно
+              рассчитать</strong> необходимое количество секций, учитывая не
+            только площадь, но и важные факторы теплопотерь: тип окон,
+            количество наружных стен и расположение комнаты. Получите надежный
+            расчет за несколько кликов!
           </p>
         </section>
 
         <div id="calculator-form"
           class="sticky top-0 bg-white/80 backdrop-blur-lg shadow-lg rounded-xl z-10 p-4 md:p-6 mb-12 border border-gray-200">
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
-            <div>
-              <label for="area"
-                class="block text-sm font-medium text-gray-700 mb-1">Площадь
-                помещения, м²</label>
-              <input type="number" id="area" value="10"
-                class="w-full  px-4 py-3 bg-gray-700 text-white border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-gray-600 focus:border-blue-500 transition-all duration-200 outline-none">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="space-y-4">
+              <div>
+                <label for="area"
+                  class="block text-sm font-medium text-gray-700 mb-1">Площадь
+                  помещения, м²</label>
+                <input type="number" id="area" value="20"
+                  class="w-full px-4 py-3 bg-gray-700 text-white border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-gray-600 focus:border-blue-500 transition-all duration-200 outline-none">
+              </div>
+              <div>
+                <label for="height"
+                  class="block text-sm font-medium text-gray-700 mb-1">Высота
+                  потолков, м</label>
+                <input type="number" id="height" step="0.1" value="2.7"
+                  class="w-full px-4 py-3 bg-gray-700 text-white border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-gray-600 focus:border-blue-500 transition-all duration-200 outline-none">
+              </div>
             </div>
-            <div>
-              <label for="height"
-                class="block text-sm font-medium text-gray-700 mb-1">Высота
-                потолков, м</label>
-              <input type="number" id="height" step="0.1" value="2.5"
-                class="w-full  px-4 py-3 bg-gray-700 text-white border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-gray-600 focus:border-blue-500 transition-all duration-200 outline-none">
+            <div class="space-y-4">
+              <div>
+                <label for="windows"
+                  class="block text-sm font-medium text-gray-700 mb-1">Тип
+                  остекления</label>
+                <select id="windows"
+                  class="w-full px-4 py-3 bg-gray-200 text-gray-800 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 transition-all duration-200 outline-none">
+                  <option value="1.2">Старое деревянное (двойное)</option>
+                  <option value="1.0" selected>Двухкамерный стеклопакет</option>
+                  <option value="0.85">Трехкамерный / с
+                    энергосбережением</option>
+                </select>
+              </div>
+              <div>
+                <label for="walls"
+                  class="block text-sm font-medium text-gray-700 mb-1">Количество
+                  наружных стен</label>
+                <select id="walls"
+                  class="w-full px-4 py-3 bg-gray-200 text-gray-800 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 transition-all duration-200 outline-none">
+                  <option value="1.0">Одна</option>
+                  <option value="1.2" selected>Две (угловая комната)</option>
+                  <option value="1.4">Три</option>
+                </select>
+              </div>
             </div>
-            <div class="bg-blue-50 p-4 rounded-lg text-center">
-              <span class="block text-sm font-medium text-blue-800">Объем
-                помещения</span>
-              <span id="volume"
-                class="text-2xl font-bold text-blue-900">25</span>
-              <span class="text-blue-900">м³</span>
-            </div>
-            <div class="bg-green-50 p-4 rounded-lg text-center">
-              <span class="block text-sm font-medium text-green-800">Требуемая
-                мощность</span>
-              <span id="power"
-                class="text-2xl font-bold text-green-900">1000</span>
-              <span class="text-green-900">Вт</span>
+            <div
+              class="col-span-1 md:col-span-2 lg:col-span-1 grid grid-cols-2 gap-4">
+              <div
+                class="bg-blue-50 p-4 rounded-lg text-center flex flex-col justify-center">
+                <span
+                  class="block text-sm font-medium text-blue-800">Объем</span>
+                <span id="volume"
+                  class="text-2xl font-bold text-blue-900">54</span>
+                <span class="text-blue-900">м³</span>
+              </div>
+              <div
+                class="bg-green-50 p-4 rounded-lg text-center flex flex-col justify-center">
+                <span class="block text-sm font-medium text-green-800">Требуемая
+                  мощность</span>
+                <span id="power"
+                  class="text-2xl font-bold text-green-900">2592</span>
+                <span class="text-green-900">Вт</span>
+              </div>
             </div>
           </div>
         </div>
@@ -94,124 +174,42 @@
             <h2
               class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-4">Радиаторы
               Tubog</h2>
-            <a class="mb-8 text-gray-600 max-w-3xl">
-              Трубчатые радиаторы Tubog (<a
-                class="text-red-600 hover:underline"
-                href="https://tubog-radiators.ru/">tubog-radiators.ru</a>) — это
-              классика дизайна и эффективности.
-              Благодаря своей конструкции они обеспечивают отличную теплоотдачу
-              и легко вписываются в любой интерьер, от лофта до неоклассицизма.
+            <p class="mb-8 text-gray-600 max-w-3xl">
+              Трубчатые радиаторы Tubog (<a class="text-red-600 hover:underline"
+                href="https://tubog-radiators.ru/" target="_blank"
+                rel="noopener noreferrer">tubog-radiators.ru</a>) — это классика
+              дизайна и эффективности.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
                 <h3 class="font-bold text-lg text-gray-900">Tubog 2057</h3>
                 <p class="text-sm text-gray-500 mb-4">Мощность: 62 Вт/секция</p>
                 <div class="text-center bg-gray-50 p-4 rounded-lg">
                   <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="62">17</span>
+                    data-radiator-power="62">42</span>
                   <span class="block text-gray-700">секций</span>
                 </div>
               </div>
               <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
                 <h3 class="font-bold text-lg text-gray-900">Tubog 3057</h3>
                 <p class="text-sm text-gray-500 mb-4">Мощность: 103
                   Вт/секция</p>
                 <div class="text-center bg-gray-50 p-4 rounded-lg">
                   <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="103">10</span>
+                    data-radiator-power="103">26</span>
                   <span class="block text-gray-700">секций</span>
                 </div>
               </div>
               <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
                 <h3 class="font-bold text-lg text-gray-900">Tubog 2180</h3>
                 <p class="text-sm text-gray-500 mb-4">Мощность: 198
                   Вт/секция</p>
                 <div class="text-center bg-gray-50 p-4 rounded-lg">
                   <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="198">6</span>
-                  <span class="block text-gray-700">секций</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-12">
-            <h2
-              class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-4">Радиаторы
-              Sira (биметалл)</h2>
-            <p class="mb-8 text-gray-600 max-w-3xl">
-              Биметаллические радиаторы Sira (<a
-                class="text-red-600 hover:underline"
-                href="https://sira-rus.ru/">sira-rus.ru</a>) сочетают в себе
-              прочность стали
-              (внутренний коллектор) и высокую теплопроводность алюминия
-              (внешнее оребрение). Это делает их идеальным выбором для систем
-              центрального отопления с высоким давлением и переменным качеством
-              теплоносителя.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                <h3 class="font-bold text-lg text-gray-900">SIRA RS 300</h3>
-                <p class="text-sm text-gray-500 mb-4">Мощность: 145
-                  Вт/секция</p>
-                <div class="text-center bg-gray-50 p-4 rounded-lg">
-                  <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="145">7</span>
-                  <span class="block text-gray-700">секций</span>
-                </div>
-              </div>
-              <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                <h3 class="font-bold text-lg text-gray-900">SIRA RS 500</h3>
-                <p class="text-sm text-gray-500 mb-4">Мощность: 201
-                  Вт/секция</p>
-                <div class="text-center bg-gray-50 p-4 rounded-lg">
-                  <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="201">5</span>
-                  <span class="block text-gray-700">секций</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h2
-              class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-4">Радиаторы
-              Royal Thermo</h2>
-            <p class="mb-8 text-gray-600 max-w-3xl">
-              Royal Thermo (<a
-                class="text-red-600 hover:underline"
-                href="https://www.royal-thermo.ru/">royal-thermo.ru</a>) — это
-              современные и высокотехнологичные радиаторы,
-              разработанные с учетом российских условий эксплуатации. Модели
-              отличаются инновационным дизайном и повышенной теплоотдачей.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                <h3 class="font-bold text-lg text-gray-900">Royal Thermo Indigo
-                  500</h3>
-                <p class="text-sm text-gray-500 mb-4">Мощность: 180
-                  Вт/секция</p>
-                <div class="text-center bg-gray-50 p-4 rounded-lg">
-                  <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="180">6</span>
-                  <span class="block text-gray-700">секций</span>
-                </div>
-              </div>
-              <div
-                class="bg-white  p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                <h3 class="font-bold text-lg text-gray-900">Royal Thermo
-                  Revolution 500</h3>
-                <p class="text-sm text-gray-500 mb-4">Мощность: 170
-                  Вт/секция</p>
-                <div class="text-center bg-gray-50 p-4 rounded-lg">
-                  <span class="text-4xl font-extrabold text-blue-600"
-                    data-radiator-power="170">6</span>
+                    data-radiator-power="198">14</span>
                   <span class="block text-gray-700">секций</span>
                 </div>
               </div>
@@ -219,60 +217,203 @@
           </div>
 
         </section>
+
+        <section
+          class="mt-16 bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Как
+            правильно рассчитать мощность и почему это важно?</h2>
+          <div class="prose max-w-none text-gray-700 space-y-4">
+            <p>Правильный расчет позволяет избежать двух крайностей:
+              недостаточной мощности, когда в комнате будет холодно в самые
+              сильные морозы, и избыточной, которая приводит к пересушенному
+              воздуху и лишним затратам на отопление.</p>
+
+            <div class="prose max-w-none text-gray-700">
+              <p>Расчет необходимой тепловой мощности — это не просто умножение
+                площади на стандартный коэффициент. Для точного результата нужно
+                учитывать все основные источники теплопотерь в помещении. Наш
+                калькулятор использует следующую формулу:</p>
+              <p class="text-center bg-gray-100 p-4 rounded-lg my-4 font-mono">
+                <strong>P = (S * H * 40) * K<sub>окна</sub> *
+                  K<sub>стен</sub></strong>
+              </p>
+              <p>Где:</p>
+              <ul>
+                <li><strong>P</strong> — итоговая требуемая мощность в
+                  Ваттах.</li>
+                <li><strong>S</strong> — площадь комнаты в м².</li>
+                <li><strong>H</strong> — высота потолков в м.</li>
+                <li><strong>40 Вт/м³</strong> — базовая норма мощности на один
+                  кубический метр для средней полосы России.</li>
+                <li><strong>K<sub>окна</sub></strong> — коэффициент остекления.
+                  Старые деревянные рамы теряют много тепла (коэффициент 1.2),
+                  тогда как современные энергосберегающие стеклопакеты
+                  эффективно его сохраняют (коэффициент 0.85).</li>
+                <li><strong>K<sub>стен</sub></strong> — коэффициент расположения
+                  комнаты. Внутренняя комната с одной наружной стеной теряет
+                  меньше тепла (1.0), чем угловая с двумя (1.2) или даже тремя
+                  (1.4) стенами, выходящими на улицу.</li>
+              </ul>
+              <p>Правильный расчет позволяет избежать двух крайностей:
+                недостаточной мощности, когда в комнате будет холодно в морозы,
+                и избыточной, которая приводит к пересушенному воздуху и лишним
+                затратам на отопление.</p>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 pt-4">Почему расчет по
+              площади — это не панацея?</h3>
+            <p>Важно понимать, что любой онлайн-калькулятор, даже самый
+              продвинутый, дает <b>рекомендательный результат</b>. Простые
+              расчеты по площади или даже объему — это сильно усредненный
+              подход, который служит лишь отправной точкой. На итоговую
+              потребность в тепле влияют два ключевых фактора, которые
+              невозможно учесть в общей формуле:</p>
+            <ol class="list-decimal list-inside space-y-2">
+              <li><b>Реальные теплопотери здания.</b> Ключевой фактор — это
+                <strong>теплоизоляция</strong> вашего дома. Новый монолитный дом
+                с утепленным фасадом и современными энергосберегающими
+                стеклопакетами теряет тепло гораздо медленнее, чем старая
+                панельная постройка со щелями в окнах. Угловая квартира на
+                последнем этаже всегда будет холоднее и потребует на 20-30%
+                больше мощности, чем аналогичная комната, окруженная со всех
+                сторон другими отапливаемыми помещениями.</li>
+              <li><b>Параметры вашей системы отопления.</b> Второй критически
+                важный аспект — это <strong>температура теплоносителя</strong>
+                (горячей воды), которую подает в систему ваша управляющая
+                компания. Производители радиаторов указывают тепловую мощность
+                своих изделий для идеальных, "лабораторных" условий (например,
+                при температуре воды 90°C). На практике же, особенно в
+                современных домах с автоматикой или в старых сетях,
+                <strong>управляющая компания</strong> может подавать воду с
+                температурой 70°C или даже 60°C. В таком случае реальная
+                теплоотдача каждой секции радиатора будет значительно ниже
+                заявленной, и рассчитанного вами количества может просто не
+                хватить для полноценного обогрева.</li>
+            </ol>
+
+            <h3 class="text-xl font-bold text-gray-800 pt-4">Что делать для
+              максимально точного подбора?</h3>
+            <p>Прежде чем совершать покупку, <b>настоятельно рекомендуется
+                проконсультироваться с вашей управляющей компанией</b> или
+              инженером, который обслуживает дом. У них следует уточнить как
+              минимум два параметра:</p>
+            <ul class="list-disc list-inside space-y-1">
+              <li><b>Проектный температурный график</b> системы отопления в
+                вашем доме.</li>
+              <li><b>Рабочее давление</b> в системе (это важно для выбора типа
+                радиатора — биметаллический, алюминиевый и т.д.).</li>
+            </ul>
+            <p>Только обладая этой информацией, вы сможете внести верные
+              поправки в расчеты и выбрать модель радиатора, которая будет
+              работать эффективно именно в ваших условиях. Сочетание грамотного
+              онлайн-расчета с реальными данными от эксплуатирующей организации
+              — это залог настоящего комфорта и тепла в вашем доме.</p>
+          </div>
+        </section>
+
+        <section class="mt-16">
+          <h2
+            class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Часто
+            задаваемые вопросы (FAQ)</h2>
+          <div class="max-w-4xl mx-auto space-y-4">
+            <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+              <summary class="font-semibold text-lg text-gray-800">Какой
+                радиатор лучше: алюминиевый, биметаллический или
+                стальной?</summary>
+              <p class="text-gray-600 mt-4">
+                Выбор зависит от системы отопления. Биметаллические (как Sira)
+                идеальны для центрального отопления с высоким давлением.
+                Алюминиевые обладают высокой теплоотдачей и подходят для
+                автономных систем. Стальные трубчатые (как Tubog) — это баланс
+                дизайна и эффективности.
+              </p>
+            </details>
+            <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+              <summary class="font-semibold text-lg text-gray-800">Почему так
+                важен тип окон и количество наружных стен?</summary>
+              <p class="text-gray-600 mt-4">
+                Основные теплопотери происходят через окна и наружные стены.
+                Современные двухкамерные стеклопакеты теряют значительно меньше
+                тепла, чем старые деревянные рамы. Угловая комната с двумя
+                наружными стенами будет холоднее, чем внутренняя с одной, и
+                потребует больше тепла для обогрева.
+              </p>
+            </details>
+            <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+              <summary class="font-semibold text-lg text-gray-800">Можно ли
+                установить радиатор с запасом мощности?</summary>
+              <p class="text-gray-600 mt-4">
+                Небольшой запас (10-15%) допустим и даже полезен для работы в
+                сильные морозы. Однако слишком большая избыточная мощность
+                приведет к пересушиванию воздуха и некомфортной температуре.
+                Лучше установить терморегулятор для точной настройки.
+              </p>
+            </details>
+          </div>
+        </section>
+
       </main>
 
       <footer class="bg-gray-800 text-white mt-12">
         <div class="container mx-auto px-4 py-6 text-center text-gray-400">
           <p>Калькулятор радиаторов отопления. Все расчеты являются
-            приблизительными.</p>
+            рекомендуемыми.</p>
+          <p class="text-sm mt-2">© 2025. Информация на сайте не является
+            публичной офертой.</p>
         </div>
       </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const areaInput = document.getElementById('area');
-            const heightInput = document.getElementById('height');
-            
-            const volumeOutput = document.getElementById('volume');
-            const powerOutput = document.getElementById('power');
-            
-            const radiatorSections = document.querySelectorAll('[data-radiator-power]');
+    document.addEventListener('DOMContentLoaded', function() {
+      const areaInput = document.getElementById('area');
+      const heightInput = document.getElementById('height');
+      const windowsSelect = document.getElementById('windows');
+      const wallsSelect = document.getElementById('walls');
 
-            function calculate() {
-                const area = parseFloat(areaInput.value) || 0;
-                const height = parseFloat(heightInput.value) || 0;
+      const volumeOutput = document.getElementById('volume');
+      const powerOutput = document.getElementById('power');
 
-                if (area > 0 && height > 0) {
-                    const volume = area * height;
-                    const requiredPower = volume * 40;
+      const radiatorSections = document.querySelectorAll('[data-radiator-power]');
 
-                    volumeOutput.textContent = Math.round(volume);
-                    powerOutput.textContent = Math.round(requiredPower);
-                    
-                    radiatorSections.forEach(span => {
-                        const sectionPower = parseInt(span.dataset.radiatorPower, 10);
-                        if (sectionPower > 0) {
-                            const sections = Math.ceil(requiredPower / sectionPower);
-                            span.textContent = sections;
-                        }
-                    });
-                } else {
-                    volumeOutput.textContent = '0';
-                    powerOutput.textContent = '0';
-                    radiatorSections.forEach(span => {
-                        span.textContent = '0';
-                    });
-                }
+      function calculate() {
+        const area = parseFloat(areaInput.value) || 0;
+        const height = parseFloat(heightInput.value) || 0;
+        const windowsCoeff = parseFloat(windowsSelect.value) || 1;
+        const wallsCoeff = parseFloat(wallsSelect.value) || 1;
+
+        if (area > 0 && height > 0) {
+          const volume = area * height;
+          const basePower = volume * 40;
+          const requiredPower = basePower * windowsCoeff * wallsCoeff;
+
+          volumeOutput.textContent = Math.round(volume);
+          powerOutput.textContent = Math.round(requiredPower);
+
+          radiatorSections.forEach(span => {
+            const sectionPower = parseInt(span.dataset.radiatorPower, 10);
+            if (sectionPower > 0) {
+              const sections = Math.ceil(requiredPower / sectionPower);
+              span.textContent = sections;
             }
+          });
+        } else {
+          volumeOutput.textContent = '0';
+          powerOutput.textContent = '0';
+          radiatorSections.forEach(span => {
+            span.textContent = '0';
+          });
+        }
+      }
+      
+      [areaInput, heightInput, windowsSelect, wallsSelect].forEach(el => {
+        el.addEventListener('input', calculate);
+      });
 
-            areaInput.addEventListener('input', calculate);
-            heightInput.addEventListener('input', calculate);
-            
-            // Initial calculation is already rendered in HTML for no-JS users.
-            // The script only handles changes.
-        });
-    </script>
+      // Initial calculation on page load
+      calculate();
+    });
+  </script>
 
   </body>
 </html>
