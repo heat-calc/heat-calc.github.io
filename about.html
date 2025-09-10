@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор радиаторов отопления: О проекте</title>
+    <title>О проекте Heat-Calc: Калькулятор радиаторов отопления</title>
     <meta name="description"
-      content="Точный калькулятор для расчета необходимой мощности и количества секций радиаторов отопления по площади помещения и высоте потолков. Подбор моделей Tubog, Sira, Royal Thermo.">
+      content="О проекте Heat-Calc: как работает калькулятор, методика расчёта (40 Вт/м³), кому подходит, ограничения и примеры. Узнайте больше о правильном выборе радиаторов и популярных брендах.">
     <meta name="keywords"
-      content="калькулятор радиаторов, расчет радиаторов отопления, калькулятор мощности радиаторов, сколько секций радиатора нужно, подбор радиаторов отопления">
+      content="калькулятор радиаторов, расчет радиаторов отопления, калькулятор мощности радиаторов, сколько секций радиатора нужно, подбор радиаторов отопления, Heat-Calc">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        .prose :where(h2,h3){scroll-margin-top:90px}
     </style>
   </head>
   <body class="bg-gray-50 text-gray-800">
@@ -25,15 +25,14 @@
         <div class="container mx-auto px-4 py-6">
           <h1
             class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-            О проекте
+            О проекте Heat-Calc
           </h1>
-          <!-- Навигация -->
           <nav
             class="flex justify-center space-x-6 text-gray-700 text-sm md:text-base">
             <a href="./index.html"
               class="hover:text-blue-600 transition">Главная</a>
             <a href="./about.html"
-              class="hover:text-blue-600 transition">О
+              class="hover:text-blue-600 transition font-semibold text-blue-600">О
               проекте</a>
             <a href="./how-to-choose.html"
               class="hover:text-blue-600 transition">Как выбрать радиатор</a>
@@ -46,29 +45,191 @@
       <main class="container mx-auto px-4 py-8">
         <section class="mb-12">
           <p class="text-lg text-center max-w-3xl mx-auto text-gray-600">
-            Проект <strong>Heat‑Calc</strong> создан, чтобы помочь людям быстро
-            и просто рассчитать необходимую мощность радиаторов отопления для
-            своего дома или квартиры.</p>
-
-          <p
-            class="mt-4 text-lg text-center max-w-3xl mx-auto text-gray-600">Правильный
-            подбор отопительных
-            приборов — это не только комфорт в зимний период, но и экономия на
-            расходах за отопление. Слишком слабые радиаторы не смогут прогреть
-            помещение, а чрезмерно мощные приведут к лишним затратам и
-            пересушенному воздуху
+            <strong>Heat-Calc</strong> — это удобный и быстрый
+            онлайн-инструмент, созданный, чтобы помочь вам рассчитать
+            необходимую мощность и подобрать радиаторы для вашего дома или
+            квартиры.
           </p>
           <p class="mt-4 text-lg text-center max-w-3xl mx-auto text-gray-600">
-            На нашем сайте вы найдете удобный калькулятор мощности радиаторов,
-            советы по выбору подходящих моделей и информацию о популярных
-            производителях отопительного оборудования.
+            Правильно подобранные радиаторы — залог комфортной температуры зимой
+            и экономии на счетах за отопление. Слишком слабые приборы не смогут
+            прогреть помещение, а избыточно мощные приведут к пересушенному
+            воздуху и лишним тратам.
           </p>
           <p class="mt-4 text-lg text-center max-w-3xl mx-auto text-gray-600">
-            Наша цель — сделать процесс выбора радиаторов понятным и быстрым для
-            всех пользователей, независимо от уровня технических знаний.
+            Наша цель — сделать процесс выбора отопительных приборов понятным
+            для всех, независимо от уровня технических знаний.
           </p>
         </section>
 
+        <section class="prose prose-lg max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl font-bold">Что вы найдёте на Heat-Calc</h2>
+          <ul class="list-disc list-inside">
+            <li><strong>Онлайн-калькулятор</strong>: Быстро считает объём
+              помещения и ориентировочную мощность радиаторов.</li>
+            <li><strong>Руководство по выбору</strong>: Объясняет, чем
+              отличаются биметаллические, алюминиевые, стальные и трубчатые
+              радиаторы.</li>
+            <li><strong>Обзор производителей</strong>: Помогает сориентироваться
+              в ключевых брендах и их особенностях.</li>
+            <li><strong>FAQ</strong>: Отвечает на самые популярные вопросы о
+              расчётах и выборе радиаторов.</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8">Как работает расчёт: Методика 40
+            Вт/м³</h2>
+          <p>
+            В основе нашего калькулятора лежит приближённая формула для
+            стандартных жилых помещений с нормальной теплоизоляцией:
+            <br><strong>Мощность ≈ Объём комнаты × 40 Вт/м³</strong>.
+          </p>
+          <p>
+            Это простой и быстрый метод, который отлично подходит для первичной
+            оценки.
+          </p>
+
+          <h3 class="text-xl font-bold mt-6">Когда стоит добавить запас
+            мощности?</h3>
+          <p>Рекомендуем добавить <strong>+10–20%</strong> к результату,
+            если:</p>
+          <ul class="list-disc list-inside">
+            <li>Ваша комната угловая или торцевая, вы живёте на первом или
+              последнем этаже.</li>
+            <li>В комнате большие панорамные окна.</li>
+            <li>Дом имеет слабую теплоизоляцию.</li>
+            <li>Вы находитесь в регионе с холодным климатом.</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8">Кому это особенно полезно?</h2>
+          <ul class="list-disc list-inside">
+            <li><strong>Владельцам квартир с центральным отоплением</strong>:
+              Чтобы оценить, хватит ли мощности биметаллических секций.</li>
+            <li><strong>Домовладельцам с автономной системой</strong>: Чтобы
+              подобрать оптимальную мощность и тип радиатора.</li>
+            <li><strong>Дизайнерам интерьеров</strong>: Для быстрой оценки
+              параметров радиаторов под конкретный дизайн-проект.</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8">Ограничения и важные нюансы</h2>
+          <ul class="list-disc list-inside">
+            <li>Формула даёт <strong>ориентировочное</strong> значение. Точный
+              расчёт зависит от множества факторов, включая реальные теплопотери
+              помещения.</li>
+            <li>Для квартир с центральным отоплением важно учитывать давление и
+              качество теплоносителя — всегда проверяйте паспортные требования
+              выбранной модели.</li>
+            <li>В помещениях со сложной архитектурой (высокие потолки, витражи)
+              лучше закладывать больший запас или обращаться к специалистам за
+              теплотехническим расчётом.</li>
+          </ul>
+
+          <div class="mt-8 p-6 bg-blue-100 rounded-lg">
+            <h3 class="text-xl font-bold text-blue-800">Быстрый чек-лист перед
+              покупкой</h3>
+            <ol class="list-decimal list-inside space-y-2 mt-4 text-blue-800">
+              <li>Измерьте площадь и высоту потолков. Оцените теплоизоляцию,
+                этаж и наличие углов.</li>
+              <li>Рассчитайте ориентировочную мощность с помощью нашего
+                калькулятора и добавьте разумный запас.</li>
+              <li>Выберите тип радиатора, подходящий для вашей системы
+                (центральная или автономная).</li>
+              <li>Проверьте паспортные характеристики: мощность секции, рабочее
+                давление и ограничения.</li>
+              <li>Убедитесь, что габариты и способ подключения подходят для
+                места установки.</li>
+            </ol>
+          </div>
+
+          <p class="mt-8 text-center text-lg">
+            Хотите начать расчёт? Перейдите на <a href="./index.html"
+              class="text-blue-600 hover:underline">главную страницу</a>.
+            <br>Изучить типы радиаторов? Загляните в раздел <a
+              href="./how-to-choose.html"
+              class="text-blue-600 hover:underline">«Как выбрать радиатор»</a>.
+            <br>Сравнить бренды? Вам поможет наш раздел <a
+              href="./manufacturers.html"
+              class="text-blue-600 hover:underline">«Производители»</a>.
+          </p>
+        </section>
+
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-center mb-6">Часто задаваемые
+            вопросы</h2>
+          <div class="space-y-4 max-w-3xl mx-auto">
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Откуда
+                взялся коэффициент 40 Вт/м³?</summary>
+              <p class="mt-2 text-gray-700">Это усреднённое значение для
+                стандартных квартир и домов с нормальной теплоизоляцией —
+                подходит для быстрой оценки необходимой мощности.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Что
+                делать, если комната угловая или с панорамными окнами?</summary>
+              <p class="mt-2 text-gray-700">В этом случае рекомендуется добавить
+                10–20% к расчётному значению. При очень слабой теплоизоляции
+                запас можно увеличить.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Какой
+                тип радиатора лучше для центрального отопления?</summary>
+              <p class="mt-2 text-gray-700">Чаще всего для центрального
+                отопления выбирают биметаллические радиаторы, так как они
+                устойчивы к высокому давлению и агрессивному теплоносителю.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Можно
+                ли полностью полагаться на формулу?</summary>
+              <p class="mt-2 text-gray-700">Формула даёт ориентировочный
+                результат. Для помещений со сложными особенностями или при
+                необходимости максимальной точности лучше выполнить детальный
+                теплотехнический расчёт.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Какое
+                рабочее давление должны выдерживать радиаторы?</summary>
+              <p class="mt-2 text-gray-700">Для квартир с центральным отоплением
+                рекомендуется выбирать радиаторы с рабочим давлением не менее
+                10-12 бар, а для частных домов - 6-8 бар.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Какой
+                материал радиатора самый долговечный?</summary>
+              <p class="mt-2 text-gray-700">Чугунные радиаторы считаются одними
+                из самых долговечных, их срок службы может достигать 30 лет.
+                Биметаллические радиаторы также отличаются высокой надежностью,
+                их срок эксплуатации составляет не менее 25 лет.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary
+                class="font-semibold cursor-pointer text-blue-700">Обязательно
+                ли устанавливать радиатор под окном?</summary>
+              <p class="mt-2 text-gray-700">Да, установка радиатора под окном
+                помогает создать тепловую завесу, которая предотвращает
+                проникновение холодного воздуха с улицы и уменьшает образование
+                конденсата.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">В чем
+                отличие биметаллических и алюминиевых радиаторов?</summary>
+              <p class="mt-2 text-gray-700">Биметаллические радиаторы имеют
+                стальной сердечник, что делает их более устойчивыми к высокому
+                давлению и агрессивному теплоносителю в системах центрального
+                отопления. Алюминиевые радиаторы обладают более высокой
+                теплоотдачей, но менее устойчивы к перепадам давления и качеству
+                воды.</p>
+            </details>
+            <details class="border rounded-lg p-4 bg-white shadow-sm">
+              <summary class="font-semibold cursor-pointer text-blue-700">Можно
+                ли использовать стальные радиаторы в многоквартирных
+                домах?</summary>
+              <p class="mt-2 text-gray-700">Стальные панельные радиаторы не
+                рекомендуется использовать в многоквартирных домах, так как они
+                плохо переносят высокое рабочее давление и гидроудары,
+                характерные для центральных систем.</p>
+            </details>
+          </div>
+        </section>
       </main>
 
       <footer class="bg-gray-800 text-white mt-12">
@@ -79,49 +240,108 @@
       </footer>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const areaInput = document.getElementById('area');
-            const heightInput = document.getElementById('height');
-            
-            const volumeOutput = document.getElementById('volume');
-            const powerOutput = document.getElementById('power');
-            
-            const radiatorSections = document.querySelectorAll('[data-radiator-power]');
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Откуда взялся коэффициент 40 Вт/м³?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Это усреднённое значение для стандартных квартир и домов с нормальной теплоизоляцией — подходит для быстрой оценки необходимой мощности."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если комната угловая или с панорамными окнами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В этом случае рекомендуется добавить 10–20% к расчётному значению. При очень слабой теплоизоляции запас можно увеличить."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой тип радиатора лучше для центрального отопления?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Чаще всего для центрального отопления выбирают биметаллические радиаторы, так как они устойчивы к высокому давлению и агрессивному теплоносителю."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли полностью полагаться на формулу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Формула даёт ориентировочный результат. Для помещений со сложными особенностями или при необходимости максимальной точности лучше выполнить детальный теплотехнический расчёт."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какое рабочее давление должны выдерживать радиаторы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для квартир с центральным отоплением рекомендуется выбирать радиаторы с рабочим давлением не менее 10-12 бар, а для частных домов - 6-8 бар."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой материал радиатора самый долговечный?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Чугунные радиаторы считаются одними из самых долговечных, их срок службы может достигать 30 лет. Биметаллические радиаторы также отличаются высокой надежностью, их срок эксплуатации составляет не менее 25 лет."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Обязательно ли устанавливать радиатор под окном?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, установка радиатора под окном помогает создать тепловую завесу, которая предотвращает проникновение холодного воздуха с улицы и уменьшает образование конденсата."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "В чем отличие биметаллических и алюминиевых радиаторов?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Биметаллические радиаторы имеют стальной сердечник, что делает их более устойчивыми к высокому давлению и агрессивному теплоносителю в системах центрального отопления. Алюминиевые радиаторы обладают более высокой теплоотдачей, но менее устойчивы к перепадам давления и качеству воды."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли использовать стальные радиаторы в многоквартирных домах?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стальные панельные радиаторы не рекомендуется использовать в многоквартирных домах, так как они плохо переносят высокое рабочее давление и гидроудары, характерные для центральных систем."
+          }
+        }
+      ]
+    }
+    </script>
 
-            function calculate() {
-                const area = parseFloat(areaInput.value) || 0;
-                const height = parseFloat(heightInput.value) || 0;
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"AboutPage",
+      "name":"О проекте Heat-Calc",
+      "description":"Зачем нужен калькулятор радиаторов, методика 40 Вт/м³, кому подходит, ограничения, чек-лист и ссылки на выбор радиатора и производителей.",
+      "isPartOf":{
+        "@type":"WebSite",
+        "name":"Heat-Calc"
+      }
+    }
+    </script>
 
-                if (area > 0 && height > 0) {
-                    const volume = area * height;
-                    const requiredPower = volume * 40;
-
-                    volumeOutput.textContent = Math.round(volume);
-                    powerOutput.textContent = Math.round(requiredPower);
-                    
-                    radiatorSections.forEach(span => {
-                        const sectionPower = parseInt(span.dataset.radiatorPower, 10);
-                        if (sectionPower > 0) {
-                            const sections = Math.ceil(requiredPower / sectionPower);
-                            span.textContent = sections;
-                        }
-                    });
-                } else {
-                    volumeOutput.textContent = '0';
-                    powerOutput.textContent = '0';
-                    radiatorSections.forEach(span => {
-                        span.textContent = '0';
-                    });
-                }
-            }
-
-            areaInput.addEventListener('input', calculate);
-            heightInput.addEventListener('input', calculate);
-            
-            // Initial calculation is already rendered in HTML for no-JS users.
-            // The script only handles changes.
-        });
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"Heat-Calc",
+      "url":"",
+      "sameAs":[]
+    }
     </script>
 
   </body>
